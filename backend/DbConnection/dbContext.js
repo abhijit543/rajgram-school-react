@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const uri = "mongodb+srv://abhijith:sn7WCc3PK8rtH3Xi@cluster0.it17lri.mongodb.net/yourDatabaseName?retryWrites=true&w=majority";
+const uri = "mongodb+srv://abhijith:sn7WCc3PK8rtH3Xi@cluster0.it17lri.mongodb.net/RKM?retryWrites=true&w=majority";
 
 const dbContext = async () => {
   try {

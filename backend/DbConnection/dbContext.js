@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
-const uri = "mongodb+srv://abhijith:sn7WCc3PK8rtH3Xi@cluster0.it17lri.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const dbContext = async () => {
-  await mongoose
 
-    .connect(uri)
-    .then(() => console.log("Db connected success"))
-    .catch((err) => console.log(err));
+const uri = "mongodb+srv://abhijith:sn7WCc3PK8rtH3Xi@cluster0.it17lri.mongodb.net/yourDatabaseName?retryWrites=true&w=majority";
+
+const dbContext = async () => {
+  try {
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("✅ MongoDB connected successfully");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
 };
 
 export default dbContext;

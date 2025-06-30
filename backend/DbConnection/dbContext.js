@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
-
-const uri = "mongodb+srv://abhijith:sn7WCc3PK8rtH3Xi@cluster0.it17lri.mongodb.net/RKM?retryWrites=true&w=majority";
+import dotenv from "dotenv";
+dotenv.config();
+const url = process.env.MONGODB_URI;
 
 const dbContext = async () => {
   try {
-    await mongoose.connect(uri, {
+    await mongoose.connect(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

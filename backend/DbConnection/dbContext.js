@@ -8,6 +8,7 @@ const dbContext = async () => {
     await mongoose.connect(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 10000,
     });
     console.log("✅ MongoDB connected successfully");
   } catch (err) {

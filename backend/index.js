@@ -24,6 +24,6 @@ app.use("/api/v1/holiday", holidayRoutes);
 app.use("/api/v1/contact", contactRoutes);
 app.use("/api/v1/donate", donateRoutes);
 
-app.listen(5000, () => {
+app.listen(8000, () => {
   console.log("Server started on port 5000");
 });

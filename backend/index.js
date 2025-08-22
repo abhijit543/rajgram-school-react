@@ -2,10 +2,11 @@ import express from "express";
 import cors from "cors";
 import dbContext from "./DbConnection/dbContext.js";
 import teacherRoutes from "./routes/teacherRouters.js";
-import studentRoutes from "./routes/studentRouter.js";
+
 import holidayRoutes from "./routes/holidayRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import donateRoutes from "./routes/donateRoutes.js";
+import resultRoutes from "./routes/resultRoutes.js";
 
 const app = express();
 
@@ -19,10 +20,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/teacher", teacherRoutes);
-app.use("/api/v1/student", studentRoutes);
+
 app.use("/api/v1/holiday", holidayRoutes);
 app.use("/api/v1/contact", contactRoutes);
 app.use("/api/v1/donate", donateRoutes);
+app.use("/api/v1/result", resultRoutes);
 
 app.listen(5000, () => {
   console.log("Server started on port 5000");
